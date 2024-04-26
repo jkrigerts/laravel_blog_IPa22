@@ -7,13 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>All posts</h1>
-
-  <ul>
-    @foreach ($posts as $post)
-      <li><a href="/show/{{ $post->id }}">{{ $post->title }}</a></li>
-    @endforeach
-  </ul>
-
+  <form method="POST" action="/store">
+    <h1>Create a Post</h1>
+    <label>Title:
+      <input name="title"/>
+    </label>
+    <label>Category ID:
+      <input name="category_id" type="number" />
+    </label>
+    <button>Save</button>
+  </form>
 </body>
 </html>
